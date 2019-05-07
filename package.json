@@ -1,0 +1,24 @@
+{
+  "name": "40k-army-wishlist",
+  "version": "1.0.0",
+  "description": "40k Army Wishlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wtsegars/40K-Army-Wishlist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wtsegars/40K-Army-Wishlist/issues"
+  },
+  "homepage": "https://github.com/wtsegars/40K-Army-Wishlist#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.17.1"
+  }
+}
