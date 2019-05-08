@@ -1,24 +1,24 @@
 const connection = require('./connection.js');
 
 let orm = {
-    selectAll: function() {
-        connection.query("SELECT * FROM ??", [], function(err, result) {
+    selectAll: function(tableSelect) {
+        connection.query("SELECT * FROM ??", [tableSelect], function(err, result) {
             if (err) {
                 return 
             }
             console.log(result);
         });
     },
-    insertOne: function() {
-        connection.query("INSERT ?? INTO ??", [], function(err, result) {
+    insertOne: function(newInfo, tableSelect) {
+        connection.query("INSERT ?? INTO ??", [newInfo, tableSelect], function(err, result) {
             if (err) {
                 return
             }
             console.log(result);
         });
     },
-    updateOne: function() {
-        connection.query("UPDATE ?? WHERE ??", [], function(err, result) {
+    updateOne: function(updatedInfo, tableSelect) {
+        connection.query("UPDATE ?? WHERE ??", [updatedInfo, tableSelect], function(err, result) {
             if (err) {
                 return
             }
