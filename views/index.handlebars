@@ -1,0 +1,43 @@
+<h1>Wishlist</h1>
+
+<h2>Models that I Own</h2>
+
+<ul>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Models that I Want</h2>
+
+<ul>
+  {{#each figures}}
+    {{#if own}}
+      {{> figures/figures-block own=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Model</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Model Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+      <label for="ca">Faction:</label>
+      <input type="text" id="ca" name="faction">
+  </div>
+
+  <div class="form-group">
+    <label for="own">Own?</label><br>
+    <input type="radio" name="own" value="1" checked> Yes<br>
+    <input type="radio" name="own" value="0"> No
+  </div>
+
+  <button type="submit">Add Model</button>
+</form>
