@@ -2,7 +2,7 @@ const express = require('express');
 
 const wh40k = require('../models/wh40k');
 
-const router = express.router();
+const router = express.Router();
 
 router.get("/", function(req, res) {
     wh40k.selectAll(function(data) {
