@@ -1,4 +1,4 @@
-S(function() {
+$(function() {
     $(".change-own").on("click", function(event) {
         var id = $(this).data("id");
         var newFigure = $(this).data("newFigure");
