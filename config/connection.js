@@ -5,6 +5,7 @@ const connection = mysql.createConnection({
     port: 8889,
     user: "root",
     password: "root",
+    socket:	"/Applications/MAMP/tmp/mysql/mysql.sock",
     database: "wh40k_db"
 });
 
