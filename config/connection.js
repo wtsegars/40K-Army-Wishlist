@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-const connection = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
     port: 8889,
     user: "root",
@@ -9,24 +9,33 @@ const connection = mysql.createConnection({
     database: "wh40k_db"
 });
 
-function handleDisconnect() {
-  connection = mysql.createConnection(db_config);
-}
-
-connection.connect(function(err) {          
+connection.connect(function(err) {
   if (err) {
-    console.log('error when connecting to db:', err);
-    setTimeout(handleDisconnect, 2000);
+    console.error("error connecting: " + err.stack);
+    return;
   }
+  console.log("connected as id " + connection.threadId);
 });
 
-connection.on('error', function(err) {
-  console.log('db error', err);
-  if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
-    handleDisconnect();                         
-  } else {                                      
-    throw err;                                  
-  }
-});
+// function handleDisconnect() {
+//   connection = mysql.createConnection(db_config);
+//   console.log(db_config);
+// }
+
+// connection.connect(function(err) {          
+//   if (err) {
+//     console.log('error when connecting to db:', err);
+//     setTimeout(handleDisconnect, 2000);
+//   }
+// });
+
+// connection.on('error', function(err) {
+//   console.log('db error', err);
+//   if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
+//     handleDisconnect();                         
+//   } else {                                      
+//     throw err;                                  
+//   }
+// });
 
 module.exports = connection;
