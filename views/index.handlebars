@@ -3,9 +3,9 @@
 <h2>Models that I Own</h2>
 
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each figures}}
+    {{#unless own}}
+      {{> figures/figures-block own=true}}
     {{/unless}}
   {{/each}}
 </ul>
