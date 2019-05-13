@@ -14,7 +14,7 @@ const exphbs = require('express-handlebars');
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require('./controllers/wh40k_contrillers');
+const routes = require('./controllers/wh40k_controllers');
 
 app.use(routes);
 
