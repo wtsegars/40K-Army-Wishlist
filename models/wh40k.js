@@ -6,13 +6,13 @@ let wh40k = {
             cb(res);
         });
     },
-    insertOne: function(tableSelect, newInfo, cb) {
-        orm.insertOne("figures", tableSelect, newInfo, function(res) {
+    insertOne: function(cols, vals, cb) {
+        orm.insertOne("figures", cols, vals, function(res) {
             cb(res);
         });
     },
-    updateOne: function(updatedInfo, tableSelect, cb) {
-        orm.updateOne("figures", updatedInfo, tableSelect, function(res) {
+    updateOne: function(objColVals, condition, cb) {
+        orm.updateOne("figures", objColVals, condition, function(res) {
             cb(res);
         });
     }
