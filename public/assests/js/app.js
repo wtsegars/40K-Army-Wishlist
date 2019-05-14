@@ -27,6 +27,8 @@ $(function() {
             own: $("[name=own]:checked").val().trim()
         };
 
+        console.log(newModel)
+
         $.ajax("/api/wh40k", {
             type: "POST",
             data: newModel
