@@ -5,7 +5,7 @@
 <ul>
   {{#each figures}}
     {{#unless own}}
-      {{> figures/figures-block own=true}}
+      <p>{{figure_name}}</p>
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +15,7 @@
 <ul>
   {{#each figures}}
     {{#if own}}
-      {{> figures/figures-block own=false}}
+      <p>{{figure_name}}</p>
     {{/if}}
   {{/each}}
 </ul>
