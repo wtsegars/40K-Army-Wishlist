@@ -7,16 +7,13 @@ const router = express.Router();
 
 router.get("/", function(req, res) {
     wh40k.selectAll(function(data) {
-        let hbsObject = {
-            wh40k: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+        res.render("index", {figures: data});
     });
 });
 
 router.post("/api/wh40k", function(req, res) {
-    wh40k.insertOne(["figure_name", "faction", "role", "own"], [req.body.figureName, req.body.faction, req.body.role, req.body.own], function(data) {
+    console.log(req.body.figure_name);
+    wh40k.insertOne(["figure_name", "faction", "role", "own"], [req.body.figure_name, req.body.faction, req.body.role, req.body.own], function(data) {
         res.json({ figure_name: data.insertName });
     });
 });
