@@ -1,12 +1,14 @@
+<img src="/assests/images/warhammer-40k-logo.png">
+
 <h1>Wishlist</h1>
 
 <h2>Models that I Own</h2>
 
 <ul>
   {{#each figures}}
-    {{#unless own}}
-      <p>{{figure_name}}</p>
-    {{/unless}}
+    {{#if own}}
+      <p>{{id}}. {{figure_name}}</p>
+    {{/if}}
   {{/each}}
 </ul>
 
@@ -14,9 +16,10 @@
 
 <ul>
   {{#each figures}}
-    {{#if own}}
-      <p>{{figure_name}}</p>
-    {{/if}}
+    {{#unless own}}
+      <span><p>{{id}}. {{figure_name}}</p>
+      <button class="change-own" data-id="{{id}}" data-own="{{own}}" data-newfigure=true>I own this</button></span>
+    {{/unless}}
   {{/each}}
 </ul>
 
@@ -40,7 +43,7 @@
 
   <div class="form-group">
     <label for="own">Own?</label><br>
-    <input type="radio" name="own" value="1" checked> Yes<br>
+    <input type="radio" name="own" value="1"> Yes<br>
     <input type="radio" name="own" value="0"> No
   </div>
 
