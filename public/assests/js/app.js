@@ -1,13 +1,16 @@
 $(function() {
     $(".change-own").on("click", function(event) {
-        var id = $(this).data("id");
-        var newFigure = $(this).data("newFigure");
-
+        event.preventDefault();
+        
+        var newFigure = $(this).data("newfigure");
+        var own = $(this).data("own");
+        console.log(own);
+        console.log(newFigure);
         var ownership = {
             own: newFigure
         };
 
-        $.ajax("/api/wh40k" + id, {
+        $.ajax("/api/wh40k/" + own, {
             type: "PUT",
             data: ownership
         }).then(function() {
