@@ -18,14 +18,11 @@ router.post("/api/wh40k", function(req, res) {
     });
 });
 
-router.put("/api/wh40k/:name", function(req, res) {
-    let condition = "name = " + req.params.figure_name;
-
+router.put("/api/wh40k/:own", function(req, res) {
+    let condition = "own = " + req.params.own;
+    console.log(condition);
     wh40k.updateOne(
         {
-            figure_name: req.body.figure_name,
-            faction: req.body.faction,
-            role: req.body.role,
             own: req.body.own
         },
         condition,
