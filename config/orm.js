@@ -13,8 +13,8 @@ function createQuestionMarks(num) {
 function objSeq(obj) {
     let arr = [];
 
-    for (var key in ob) {
-        var value = ob[key];
+    for (var key in obj) {
+        var value = obj[key];
         
         if (Object.hasOwnProperty.call(obj, key)) {
           
@@ -58,7 +58,7 @@ let orm = {
     },
     updateOne: function(table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
-
+        console.log(objSeq(objColVals));
         queryString += " SET ";
         queryString += objSeq(objColVals);
         queryString += " WHERE ";
