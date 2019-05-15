@@ -1,28 +1,12 @@
+<div class="grid-container">
+
+<div class="header">
 <img src="/assests/images/warhammer-40k-logo.png">
 
 <h1>Wishlist</h1>
 
-<h2>Models that I Own</h2>
-
-<ul>
-  {{#each figures}}
-    {{#if own}}
-      <p>{{id}}. {{figure_name}}</p>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Models that I Want</h2>
-
-<ul>
-  {{#each figures}}
-    {{#unless own}}
-      <span><p>{{id}}. {{figure_name}}</p>
-      <button class="change-own" data-id="{{id}}" data-own="{{own}}" data-newfigure=true>I own this</button></span>
-    {{/unless}}
-  {{/each}}
-</ul>
-
+</div>
+<div class="search">
 <h2>Add a Model</h2>
 <form class="create-form">
 
@@ -49,3 +33,28 @@
 
   <button type="submit">Add Model</button>
 </form>
+</div>
+<div class="left-list">
+<h2>Models that I Own</h2>
+
+<ul>
+  {{#each figures}}
+    {{#if own}}
+      <p>{{id}}. {{figure_name}}</p>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+<div class="right-list">
+<h2>Models that I Want</h2>
+
+<ul>
+  {{#each figures}}
+    {{#unless own}}
+      <span><p>{{id}}. {{figure_name}}</p>
+      <button class="change-own" data-id="{{id}}" data-own="{{own}}" data-newfigure=true>I own this</button></span>
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+</div>
