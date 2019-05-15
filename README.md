@@ -1,1 +1,5 @@
 # 40K-Army-Wishlist
+
+This is an application that creates a couple of lists that can be altered based on what the user puts in. One of the lists is a list of WH40k models that a user owns and the other is a list of WH40k models that a user wants to own. In order to add to the list, the user enters specific information into the input fields on the left-hand part of the page. Once the user does that, the specific model that they entered into the input fields will appear on one of the two lists on the center or right-hand side of the page depending on what they put into the input fields. If the user says that they own the model, the model name that they entered will be placed into the list of models that they own; if the user wishes to own a specific model, the name of the model will appear in the list of models that they wish to own along with a button that, when pushed, will switch the item to the other list thus indicating that they own that specific model.
+
+This application runs off of JavaScript, Node.js, express, handlebars, jQuery, and MySQL database. 
