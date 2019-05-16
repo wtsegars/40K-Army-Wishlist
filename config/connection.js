@@ -1,12 +1,11 @@
 const mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    host: "localhost",
-    port: 8889,
-    user: "root",
-    password: "root",
-    socket:	"/Applications/MAMP/tmp/mysql/mysql.sock",
-    database: "wh40k_db"
+    host: process.env.HOST,
+    port: 3306,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 
 connection.connect(function(err) {
